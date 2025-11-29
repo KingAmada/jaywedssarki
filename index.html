@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeniffer & Sarki | Our Story</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS (for layout utility) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* --- LUXURY THEME VARIABLES (Matching Invitation) --- */
+        :root {
+            --navy-deep: #020612;
+            --navy-light: #0a152b;
+            --gold-main: #d4af37;
+            --gold-light: #fbe598;
+            --cream: #f7f4ed;
+            --text-dark: #121212;
+        }
+
+        /* --- CUSTOM TYPOGRAPHY --- */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--navy-deep);
+            color: var(--cream);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .script {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        /* --- GOLD TEXT EFFECT --- */
+        .gold-text {
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 40%, #b38728 60%, #aa771c 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .gold-border {
+            border: 1px solid var(--gold-main);
+        }
+        
+        /* --- ANIMATIONS --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            will-change: opacity, visibility;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* --- PARALLAX HERO --- */
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(2, 6, 18, 0.4), rgba(2, 6, 18, 0.8)), 
+                        url('http://googleusercontent.com/image_collection/image_retrieval/12061327150166412497'); /* Romantic Abstract bg */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        /* --- TIMELINE LINE --- */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--gold-main), transparent);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        /* --- IMAGE STYLING --- */
+        .story-img {
+            filter: grayscale(20%) sepia(10%);
+            transition: all 0.5s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        
+        .story-img:hover {
+            filter: grayscale(0%) sepia(0%);
+            transform: scale(1.02);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            transition: background 0.3s ease;
+        }
+        nav.scrolled {
+            background-color: rgba(2, 6, 18, 0.95);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* --- DECORATIONS --- */
+        .ornament {
+            color: var(--gold-main);
+            font-size: 20px;
+            margin: 20px 0;
+            opacity: 0.8;
+        }
+        
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .timeline-line { left: 20px; }
+            .timeline-content { margin-left: 40px !important; text-align: left !important; }
+            .timeline-img-wrapper { order: -1; margin-bottom: 20px; }
+            .hero-title { font-size: 3rem !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center text-white">
+        <div class="text-xl tracking-widest serif font-bold gold-text">J & S</div>
+        <div class="hidden md:flex space-x-8 text-xs tracking-[0.2em] uppercase opacity-80">
+            <a href="#hello" class="hover:text-[#d4af37] transition">The Beginning</a>
+            <a href="#journey" class="hover:text-[#d4af37] transition">The Journey</a>
+            <a href="#proposal" class="hover:text-[#d4af37] transition">The Yes</a>
+            <a href="#doha" class="hover:text-[#d4af37] transition">Doha 2026</a>
+        </div>
+        <a href="http://www.jaywedssarki.com" class="border border-[#d4af37] px-6 py-2 text-xs uppercase tracking-widest hover:bg-[#d4af37] hover:text-black transition duration-300">
+            RSVP
+        </a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-section">
+        <div class="z-10 px-4 fade-in-section is-visible">
+            <p class="text-xs md:text-sm uppercase tracking-[0.4em] mb-4 text-[#fbe598]">The Love Story Of</p>
+            <h1 class="hero-title text-5xl md:text-8xl mb-6 leading-tight">
+                <span class="block text-white">Jeniffer</span>
+                <span class="script text-[#d4af37] text-4xl md:text-6xl my-2 block">&</span>
+                <span class="block text-white">Sarki</span>
+            </h1>
+            <div class="w-24 h-[1px] bg-[#d4af37] mx-auto my-6"></div>
+            <p class="serif italic text-xl md:text-2xl text-gray-300">"It started with a simple hello."</p>
+            
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50">
+                <i class="fa-solid fa-chevron-down text-[#d4af37]"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- CHAPTER 1: THE HELLO -->
+    <section id="hello" class="py-24 md:py-32 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+            <div class="text-[20rem] serif font-bold text-[#d4af37] absolute -top-20 -left-20">01</div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-24">
+                <div class="w-full md:w-1/2 fade-in-section">
+                    <div class="relative p-2 border border-[#d4af37]/30">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/17855663784185799307" alt="First Meeting" class="story-img w-full h-auto object-cover aspect-[3/4]">
+                        <div class="absolute -bottom-6 -right-6 bg-[#0a152b] p-6 border border-[#d4af37] shadow-xl">
+                            <p class="serif text-2xl italic text-[#d4af37]">Circa 2018</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 text-center md:text-left fade-in-section">
+                    <div class="ornament"><i class="fa-solid fa-star-of-life"></i></div>
+                    <h2 class="text-4xl md:text-5xl mb-6">A Simple Hello</h2>
+                    <p class="text-gray-400 leading-loose mb-6 font-light">
+                        It wasn't fireworks immediately; it was a conversation. A chance encounter that felt remarkably familiar. In a crowded room, two paths from different corners of the world—connecting Nairobi, Abuja, and beyond—converged for a brief moment.
+                    </p>
+                    <p class="text-gray-400 leading-loose font-light">
+                        That first "Hello" was quiet, unassuming, but it held the weight of destiny. Numbers were exchanged, and what started as polite text messages slowly bloomed into late-night calls that bridged time zones.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER 2: THE JOURNEY (Global) -->
+    <section id="journey" class="py-24 bg-[#0a152b] relative">
+        <div class="timeline-line hidden md:block"></div>
+        
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20 fade-in-section">
+                <h2 class="text-3xl md:text-4xl serif italic text-[#d4af37]">Miles Apart, Hearts Together</h2>
+                <p class="text-sm uppercase tracking-widest mt-4 text-gray-400">The Global Romance</p>
+            </div>
+
+            <!-- Timeline Item 1 -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-24 relative fade-in-section">
+                <div class="w-full md:w-5/12 text-center md:text-right timeline-content">
+                    <h3 class="text-3xl mb-2">Abuja Nights</h3>
+                    <p class="text-[#d4af37] text-sm uppercase tracking-widest mb-4">Nigeria</p>
+                    <p class="text-gray-400 font-light">
+                        Where the foundation was built. Amidst the hustle of the capital, we found serenity in each other's company. The drives through Katampe, the quiet dinners—this is where friendship turned into inseparable love.
+                    </p>
+                </div>
+                <div class="hidden md:flex w-2/12 justify-center z-10">
+                    <div class="w-4 h-4 bg-[#d4af37] rounded-full ring-4 ring-[#0a152b] ring-offset-2 ring-offset-[#d4af37]"></div>
+                </div>
+                <div class="w-full md:w-5/12 timeline-img-wrapper">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/17855663784185799307" class="story-img w-full h-64 object-cover border-b-4 border-[#d4af37]">
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="flex flex-col md:flex-row-reverse justify-between items-center mb-24 relative fade-in-section">
+                <div class="w-full md:w-5/12 text-center md:text-left timeline-content">
+                    <h3 class="text-3xl mb-2">Kamloops Winters</h3>
+                    <p class="text-[#d4af37] text-sm uppercase tracking-widest mb-4">Canada</p>
+                    <p class="text-gray-400 font-light">
+                        Distance tested us, but the snowy peaks of Canada only made the heart grow fonder. FaceTime dates became our ritual, proving that love knows no geography.
+                    </p>
+                </div>
+                <div class="hidden md:flex w-2/12 justify-center z-10">
+                    <div class="w-4 h-4 bg-[#d4af37] rounded-full ring-4 ring-[#0a152b] ring-offset-2 ring-offset-[#d4af37]"></div>
+                </div>
+                <div class="w-full md:w-5/12 timeline-img-wrapper">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/9712773489815456453" class="story-img w-full h-64 object-cover border-b-4 border-[#d4af37]">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CHAPTER 3: THE PROPOSAL -->
+    <section id="proposal" class="py-32 relative flex items-center justify-center">
+        <!-- Parallax Background -->
+        <div class="absolute inset-0 z-0">
+             <div class="w-full h-full bg-cover bg-center bg-fixed opacity-30" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/13374242131238615962');"></div>
+             <div class="absolute inset-0 bg-gradient-to-t from-[#020612] via-transparent to-[#020612]"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl fade-in-section">
+            <div class="ornament"><i class="fa-solid fa-ring"></i></div>
+            <h2 class="text-5xl md:text-7xl mb-8 gold-text serif">The Yes</h2>
+            <p class="text-lg md:text-xl text-gray-200 leading-relaxed font-light mb-10">
+                Under a canopy of stars, with the world fading into the background, Sarki got down on one knee. It wasn't just a question; it was a promise of a lifetime. Jeniffer's "Yes" was the easiest word she ever spoke.
+            </p>
+            <div class="inline-block border border-[#d4af37] p-2 rotate-2 hover:rotate-0 transition duration-500">
+                <div class="bg-white p-4 pb-12 shadow-2xl transform rotate-0">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/17855663784185799307" alt="The Ring" class="w-64 h-auto filter grayscale">
+                    <div class="script text-black text-2xl mt-4 transform -rotate-2">She said yes!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER 4: THE DESTINATION -->
+    <section id="doha" class="py-24 bg-[#f7f4ed] text-[#020612]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/2 fade-in-section">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/13926861217036496677" class="w-full h-64 object-cover">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/13278546199320290680" class="w-full h-64 object-cover mt-8">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 fade-in-section">
+                    <p class="text-sm uppercase tracking-[0.3em] text-[#8a6e2f] mb-4">The Next Chapter</p>
+                    <h2 class="text-5xl serif mb-6">Doha, Qatar</h2>
+                    <p class="text-gray-600 leading-loose mb-6">
+                        We invite you to join us where the desert meets the sea. Our story continues in the refined elegance of Doha. It is here, surrounded by our most cherished family and friends, that we will make our vows eternal.
+                    </p>
+                    <div class="border-l-4 border-[#d4af37] pl-6 py-2 mb-8">
+                        <p class="serif text-xl italic text-[#020612]">"Because you are among the few we hold in the highest esteem..."</p>
+                    </div>
+                    <a href="http://www.jaywedssarki.com" class="inline-block bg-[#020612] text-white px-10 py-4 text-xs uppercase tracking-widest hover:bg-[#d4af37] transition duration-300">
+                        View Wedding Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#020612] py-20 border-t border-[#d4af37]/20 text-center">
+        <div class="fade-in-section">
+            <h2 class="gold-text text-6xl serif mb-4">J & S</h2>
+            <p class="text-gray-500 text-xs tracking-widest uppercase mb-10">Jeniffer & Sarki • 07.02.2026</p>
+            
+            <div class="flex justify-center space-x-6 mb-12">
+                <div class="w-12 h-12 border border-[#d4af37] rounded-full flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition cursor-pointer">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="w-12 h-12 border border-[#d4af37] rounded-full flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition cursor-pointer">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+            </div>
+
+            <p class="text-gray-600 text-xs font-light">
+                &copy; 2026 Jeniffer & Sarki. All rights reserved.<br>
+                Made with Love.
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT FOR ANIMATIONS -->
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for Fade In
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
